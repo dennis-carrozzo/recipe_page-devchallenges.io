@@ -1,0 +1,285 @@
+:root {
+    --font-one: 'Playfair Display', serif;
+    --font-two: 'Montserrat', sans-serif;
+    --color-grey: #828282;
+    --color-grey-light: #bdbdbd;
+    --color-dark: #000;
+    --color-dark-two: #333333;
+    --color-accent: #F2994A;
+
+    font-size: 10px;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Resets */
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+/* Page */
+.page-wrapper {
+    max-width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 3rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    color: var(--color-dark-two);
+}
+
+
+/* Header and Main Image */
+.title {
+    width: 100%;
+    color: var(--color-dark);
+}
+
+.title>h1 {
+    padding-bottom: 1rem;
+    font-family: var(--font-one);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 1vw + 2rem, 3.8rem);
+    line-height: 3rem;
+}
+
+.flex-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.title>.flex-wrapper>* {
+    display: block;
+}
+
+.title>.flex-wrapper>p {
+    padding: 0 1.2rem 3rem;
+    font-family: var(--font-two);
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1vw + 2rem, 1.4rem);
+    line-height: 1.4rem;
+}
+
+.page-wrapper>img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.2rem;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.stats>div:first-child {
+    width: 100%;
+}
+
+.stats>div {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: var(--font-two);
+}
+
+.text-wrapper {
+    padding-left: 0.5rem;
+}
+
+.text-wrapper>h4 {
+    padding-bottom: 0.1rem;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 1vw + 2rem, 1rem);
+    color: var(--color-grey-light);
+}
+
+.text-wrapper>p {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.primary>.text-wrapper>p {
+    color: var(--color-accent);
+}
+
+/* Ingredients And Instructions */
+.ingredients>h2, .instructions>h2 {
+    font-family: var(--font-one);
+    font-size: clamp(1.8rem, 1vw + 2rem, 2.4rem);
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+
+.ingredients>h2 {
+    margin-bottom: 1.3rem;
+}
+
+.ingredient-section {
+    margin-bottom: 4rem;
+}
+
+.ingredient-section>h3 {
+    margin-bottom: 2.4rem;
+    font-family: var(--font-one);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 1vw + 2rem, 1.8rem);
+    line-height: 2.1rem;
+    font-style: italic;
+}
+
+.ingredient-section>.ingredient {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: nowrap;
+    font-family: var(--font-two);
+    font-size: clamp(1.4rem, 1vw + 2rem, 1.6rem);
+}
+
+.ingredient-section>.ingredient>input[type=checkbox] {
+    display: block;
+    flex-shrink: 0;
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+.ingredient-section>.ingredient>label {
+    margin-left: 1rem;
+    display: block;
+}
+
+.ingredient-section>.ingredient>label>i {
+    font-weight: 500;
+}
+
+.instructions>h2 {
+    margin-bottom: 2.8rem;
+}
+
+.instructions>.instruction {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: nowrap;
+}
+
+.instructions>.instruction>.instruction-number {
+    flex-shrink: 0;
+    border-radius: 0.6rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: var(--color-accent);
+    line-height: 3.2rem;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-one);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.instructions>.instruction>.instruction-text {
+    margin: 0 0 1rem 1.5rem;
+    font-family: var(--font-two);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+}
+
+cite {
+    margin-top: 2.6rem;
+    display: block;
+    font-family: var(--font-two);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-grey-light);
+}
+
+cite>span {
+    display: block;
+}
+
+/* Footer */
+footer {
+    margin: 5rem 0 1rem 0;
+    text-align: center;
+    font-family: var(--font-two);
+    font-size: 1.4rem;
+    color: lightgrey;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .page-wrapper {
+        padding: 5rem 15% 1rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .page-wrapper {
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas:
+            "title title"
+            "img img"
+            "ingredients stats"
+            "instructions ."
+            "footer footer";
+    }
+
+    .title {
+        grid-area: title;
+        padding-right: 30%;
+    }
+
+    .page-wrapper>img {
+        grid-area: img;
+        margin-bottom: 4.8rem;
+    }
+
+    .ingredients {
+        grid-area: ingredients;
+    }
+
+    .stats {
+        grid-area: stats;
+        justify-self: end;
+        border-radius: 1.2rem;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        width: max-content;
+        height: max-content;
+        padding: 4rem;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .stats>div:first-child {
+        width: auto;
+    }
+
+    .instructions {
+        grid-area: instructions;
+    }
+
+    cite {
+        margin-top: 5.7rem;
+    }
+
+    cite>span {
+        display: inline;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
